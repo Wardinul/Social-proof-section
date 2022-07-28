@@ -1,0 +1,251 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --very-dark-magenta:hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+
+    --dark-grayish-magenta:hsl(303, 10%, 53%);
+    --light-grayish-magenta:hsl(300, 24%, 96%);
+    --white:  hsl(0, 0%, 100%);
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: hsla(302, 10%, 53%, 0.36);
+}
+
+.hero{
+    display: grid;
+    position: relative;
+    grid-template-rows: 1fr;
+    background-color: var(--light-grayish-magenta);
+    min-height: 80vh;
+    margin: 3em 0;
+    width: 90%;
+    box-shadow: 0px 10px 25px -10px gray;
+}
+
+.mobile-hero-bg{
+    display: none;
+    position: absolute;
+}
+
+.desktop-hero-bg{
+    position: absolute;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+    width: 80%;
+    margin: auto;
+    padding: 3em 0;
+    font-family: 'League Spartan', sans-serif;
+}
+
+.hero *{
+    transition: .5s;
+}
+
+.main > div:nth-child(3){
+    margin-top:1em;
+}
+
+.main > div:nth-child(4){
+    margin-top: 2em;
+}
+
+.about{
+    display: grid;
+    grid-column: 1/4;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.our-services h1,
+.our-services p{
+    max-width: 350px;
+}
+
+.our-services h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--very-dark-magenta);
+}
+
+.our-services p{
+    color: var(--dark-grayish-magenta);
+    margin-top: .5em;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.rating{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.rating > div:nth-child(2){
+    margin-left: 2.5rem;
+}
+
+.rating > div:nth-child(3){
+    margin-left: 5rem;
+}
+
+.rating-item{
+    display: flex;
+    align-items: center;
+    background-color:hsla(300, 51%, 60%, 0.119);
+    padding: 1em;
+    border-radius: 10px;
+    margin: .5em 0;
+    width: 450px;
+}
+
+.rate-text{
+    color:var(--very-dark-magenta);
+    font-weight: 500;
+    margin-left: 2.5em;
+}
+
+.review-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--very-dark-magenta);
+    padding: 2em 1.5em;
+    border-radius: 10px;
+    height: 200px;
+    block-size: fit-content;
+}
+
+.review-item > div:nth-child(2){
+    margin-top: 1em;
+}
+
+.review-item img{
+    width: 50px;
+    border-radius: 50px;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+}
+
+.user-name{
+    margin-left: 1.5em;
+}
+
+.user-name span,
+.user-name p{
+    margin: .3em 0;
+}
+
+.user-name span{
+    color: var(--white);
+}
+
+.user-name p{
+    color: var(--soft-pink);
+}
+
+.user-comment{
+    color: hsla(300, 24%, 96%, 0.548);
+}
+
+@media screen and (max-width:1250px) {
+    .about{
+        grid-template-columns: 1fr;
+        margin: auto;
+        max-width: 500px;
+    }
+    .our-services h1,
+    .our-services p{
+        max-width: 100%;
+        text-align: center;
+        margin: .5em 0;
+    }
+    .rating > div{
+        width: 100%;
+    }
+    .rating > div:nth-child(2){
+        margin:.5em 0;
+    }
+    .rating > div:nth-child(3){
+        margin:.5em 0;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .hero{
+        width: 100%;
+        margin: 2em;
+        padding: 0 1.5em;
+    }
+    .mobile-hero-bg{
+        display: block;
+    }
+    .desktop-hero-bg{
+        display: none;
+    }
+    .main{
+        width: 100%;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 2em 1em;
+    }
+    .main > div:nth-child(2){
+        grid-column: span 3;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .main > div:nth-child(3){
+        grid-column: span 3;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .main > div:nth-child(4){
+        grid-column: span 3;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .hero{
+        margin:0;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .about h1{
+        font-size: 1.9rem;
+    }
+    .rating-item{
+        flex-direction: column;
+    }
+    .rate-text{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .user-info{
+        flex-direction: column;
+    }
+    .user-name{
+        margin:0;
+    }
+}
