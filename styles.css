@@ -1,3 +1,6 @@
+
+/* Starting Styles */
+
 *, *::before, *::after{
     box-sizing: border-box;
     margin: 0;
@@ -25,6 +28,19 @@ body{
     transition: .5s;
 }
 
+/* Page Backgrounds */
+
+.mobile-page-bg{
+    display: none;
+    position: absolute;
+}
+
+.desktop-page-bg{
+    position: absolute;
+}
+
+/* Main Styles */
+
 .page{
     display: grid;
     position: relative;
@@ -34,15 +50,6 @@ body{
     margin: 3em 0;
     width: 90%;
     box-shadow: 0px 10px 25px -10px gray;
-}
-
-.mobile-page-bg{
-    display: none;
-    position: absolute;
-}
-
-.desktop-page-bg{
-    position: absolute;
 }
 
 .page__container{
@@ -164,6 +171,8 @@ body{
 .user-comment{
     color: hsla(300, 24%, 96%, 0.548);
 }
+
+/* Media Queries */
 
 @media screen and (max-width:78.125em) {
     .about{
