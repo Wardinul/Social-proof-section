@@ -146,7 +146,7 @@ body{
     border-radius: 50px;
 }
 
-.user-info{
+.review-item__user{
     display: flex;
     align-items: center;
 }
@@ -168,7 +168,7 @@ body{
     color: var(--soft-pink);
 }
 
-.user-comment{
+.review-item__user__comment{
     color: hsla(300, 24%, 96%, 0.548);
 }
 
@@ -251,7 +251,7 @@ body{
 }
 
 @media screen and (max-width:18.75em) {
-    .user-info{
+    .review-item__user{
         flex-direction: column;
     }
     .user-name{
