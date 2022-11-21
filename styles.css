@@ -21,7 +21,11 @@ body{
     background-color: hsla(302, 10%, 53%, 0.36);
 }
 
-.hero{
+.page *{
+    transition: .5s;
+}
+
+.page{
     display: grid;
     position: relative;
     grid-template-rows: 1fr;
@@ -32,16 +36,16 @@ body{
     box-shadow: 0px 10px 25px -10px gray;
 }
 
-.mobile-hero-bg{
+.mobile-page-bg{
     display: none;
     position: absolute;
 }
 
-.desktop-hero-bg{
+.desktop-page-bg{
     position: absolute;
 }
 
-.main{
+.page__container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -53,36 +57,32 @@ body{
     font-family: 'League Spartan', sans-serif;
 }
 
-.hero *{
-    transition: .5s;
-}
-
-.main > div:nth-child(3){
+.page__container > div:nth-child(3){
     margin-top:1em;
 }
 
-.main > div:nth-child(4){
+.page__container > div:nth-child(4){
     margin-top: 2em;
 }
 
-.about{
+.page__container__about{
     display: grid;
     grid-column: 1/4;
     grid-template-columns: repeat(2, 1fr);
 }
 
-.our-services h1,
-.our-services p{
+.services h1,
+.services p{
     max-width: 350px;
 }
 
-.our-services h1{
+.services__title{
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--very-dark-magenta);
 }
 
-.our-services p{
+.services__paragraph{
     color: var(--dark-grayish-magenta);
     margin-top: .5em;
     font-size: 14px;
@@ -113,7 +113,7 @@ body{
     width: 450px;
 }
 
-.rate-text{
+.rating__item__info{
     color:var(--very-dark-magenta);
     font-weight: 500;
     margin-left: 2.5em;
@@ -236,7 +236,7 @@ body{
     .rating-item{
         flex-direction: column;
     }
-    .rate-text{
+    .rating__item__info{
         margin: 0;
     }
 }
